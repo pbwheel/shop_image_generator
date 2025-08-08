@@ -5,8 +5,8 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # 步骤 3: 设置环境变量，避免Python将.pyc文件写入磁盘
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # 步骤 4: 复制依赖文件并安装依赖
 # 仅复制requirements.txt可以利用Docker的层缓存机制

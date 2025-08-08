@@ -27,3 +27,17 @@
 
 ```bash
 docker build -t shop-image-generator .
+```
+
+### 3. 运行容器
+使用 docker run 命令来启动你的应用。请务必将下面命令中的占位符替换为你自己的腾讯云COS信息。
+
+```bash
+docker run -d -p 8000:8000 \
+  --name restaurant-api \
+  -e COS_SECRET_ID="你的SecretId" \
+  -e COS_SECRET_KEY="你的SecretKey" \
+  -e COS_REGION="你的存储桶地域, 例如 ap-shanghai" \
+  -e COS_BUCKET="你的存储桶名称-APPID, 例如 test-1234567890" \
+  shop-image-generator
+```
