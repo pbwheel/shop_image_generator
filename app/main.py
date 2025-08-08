@@ -14,7 +14,7 @@ app = FastAPI(
 # 定义请求体的数据模型，确保传入参数的类型正确
 class StoreInfo(BaseModel):
     name: str
-    store_type: str
+    category: str
 
 
 @app.post("/generate-image/", summary="生成并上传店铺图片")
@@ -23,11 +23,11 @@ async def create_image(store: StoreInfo):
     接收店铺名称和类型，生成图片并上传，最终返回可访问的图片URL。
 
     - **name**: 店铺的完整名称。
-    - **store_type**: 店铺的类型 (例如: "火锅", "咖啡", "日式料理" 等)，用于智能配色。
+    - **category**: 店铺的类型 (例如: "火锅", "咖啡", "日式料理" 等)，用于智能配色。
     """
     try:
         # 1. 调用图片生成函数，返回一个内存中的二进制对象
-        image_bytes_io = generate_store_image(store.name, store.store_type)
+        image_bytes_io = generate_store_image(store.name, store.category)
 
         if image_bytes_io is None:
             raise HTTPException(status_code=500, detail="图片生成失败。")
