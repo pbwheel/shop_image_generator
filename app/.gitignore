@@ -1,0 +1,56 @@
+# Python
+# 忽略Python虚拟环境文件夹
+venv/
+/venv/
+.venv/
+/.venv/
+env/
+/env/
+.env/
+/.env/
+
+# 忽略Python字节码和缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 忽略 egg-info, build, dist 等打包和安装目录
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# 忽略 pip 生成的日志和文件
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 忽略 IPython/Jupyter Notebook 检查点文件
+.ipynb_checkpoints
+
+# 单元测试和覆盖率报告
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# IDE / Editor
+# 忽略 JetBrains (PyCharm) 的配置文件
+.idea/
+
+# 忽略 Visual Studio Code 的配置文件
+.vscode/
+
+# 操作系统
+# 忽略 macOS 系统文件
+.DS_Store
+
+# 忽略 Windows 缩略图缓存
+Thumbs.db
+
+# 敏感信息
+# 忽略可能包含敏感环境变量的文件
+.env
+*.env
